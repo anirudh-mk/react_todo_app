@@ -25,7 +25,12 @@ function TodoItems({ id, title, completed, toggleTodo, deleteTodo }: Props) {
               />
             </td>
             <td style={{ width: 332.453 }}>
-              <label htmlFor="">{title}</label>
+              <label
+                htmlFor=""
+                className={completed ? "task-completed" : "none"}
+              >
+                {title}
+              </label>
             </td>
             <td>
               <p onClick={() => deleteTodo(id)}>

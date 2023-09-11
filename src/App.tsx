@@ -12,6 +12,7 @@ function App() {
 
   const [todos, setTodos] = useState<Todo[]>([]);
   const [task, setTask] = useState("");
+  let [filer, setFilter] = useState("all");
 
   function handleTask(event: ChangeEvent<HTMLInputElement>) {
     setTask(event.target.value);
@@ -50,6 +51,20 @@ function App() {
     setTodos(todos.filter((value) => !value.completed));
   }
 
+  function handleTodoFilter(selectedFilter: string) {
+    setFilter(selectedFilter);
+  }
+
+  let filterdTodoList = todos.filter((todo) => {
+    if (filer === "completed") {
+      return todo.completed;
+    } else if (filer === "active") {
+      return !todo.completed;
+    } else {
+      return todos;
+    }
+  });
+
   const pendingTasks = todos.filter((todo) => !todo.completed).length;
 
   return (
@@ -79,7 +94,7 @@ function App() {
           </table>
         </form>
       </div>
-      {todos.map((todo) => (
+      {filterdTodoList.map((todo) => (
         <TodoItems
           key={todo.id}
           id={todo.id}
@@ -92,6 +107,7 @@ function App() {
       <BottomNavbar
         pendingTasks={pendingTasks}
         clearCompleatedTodos={clearCompleatedTodos}
+        handleTodoFilter={handleTodoFilter}
       ></BottomNavbar>
     </div>
   );
