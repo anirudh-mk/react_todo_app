@@ -1,0 +1,31 @@
+.todo-items-container{
+    width: fit-content;
+    background: #fff;
+    box-shadow: rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin: auto;
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
+
+.todo-items-container input[type='checkbox']{
+    width: 20px;
+    height: 18px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.todo-items-container label{
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+}
+
+.todo-items-container table{
+    width: 450px;
+}
+
+.container p{
+    margin: 0;
+    font-size: 20px;
+    color: gray;
+}

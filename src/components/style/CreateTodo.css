@@ -1,0 +1,35 @@
+.create-todo-container{
+    width: fit-content;
+    background: #fff;
+    box-shadow: rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin: auto;
+    margin-bottom: 20px;
+    margin-top: 20px;
+
+}
+
+.create-todo-container input[type='text']{
+    width: 300px; 
+    height: 20px;
+    outline: none;
+    border: none;
+    font-size: 18px;
+}
+
+.create-todo-container input[type='checkbox']{
+    width: 20px;
+    height: 18px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.create-todo-container table{
+    width: 450px;
+}
+
+.create-todo-container p{
+    margin: 0;
+    font-size: 20px;
+    color: gray;
+}
